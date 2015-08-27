@@ -1,0 +1,4 @@
+nose
+asynctest
+coverage
+flake8

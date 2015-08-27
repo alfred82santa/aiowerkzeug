@@ -1,0 +1,17 @@
+language: python
+python:
+  - 3.4
+  - "3.5.0b3" # 3.5
+# command to install dependencies
+install:
+  - pip install -r requirements.txt
+  - pip install -r requirements-tests.txt
+  - pip install coveralls
+# command to run tests
+script:
+  - flake8 aiowerkzeug
+  - flake8 tests
+  - nosetests --with-coverage -d --cover-package=aiowerkzeug
+
+after_success:
+  - coveralls --rcfile=.coveragerc
