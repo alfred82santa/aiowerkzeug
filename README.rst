@@ -4,7 +4,7 @@
 .. |travis-master| image:: https://travis-ci.org/alfred82santa/aiowerkzeug.svg?branch=master   
     :target: https://travis-ci.org/alfred82santa/aiowerkzeug
     
-.. |coverall-master| image:: https://coveralls.io/repos/alfred82santa/aiowerkzeug/badge.png?branch=master 
+.. |coverall-master| image:: https://coveralls.io/repos/alfred82santa/aiowerkzeug/badge.svg?branch=master&service=github
     :target: https://coveralls.io/r/alfred82santa/aiowerkzeug?branch=master
     
 .. |doc-master| image:: https://readthedocs.org/projects/aiowerkzeug/badge/?version=latest
