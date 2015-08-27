@@ -1,7 +1,7 @@
 language: python
 python:
   - 3.4
-  - nightly # 3.5
+  - latest # 3.5
 # command to install dependencies
 install:
   - pip install -r requirements.txt
