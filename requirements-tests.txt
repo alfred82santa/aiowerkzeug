@@ -1,6 +1,4 @@
 nose
 asynctest
 coverage
-flake8python-dateutil
-iso8601python-dateutil
-iso8601
+flake8
