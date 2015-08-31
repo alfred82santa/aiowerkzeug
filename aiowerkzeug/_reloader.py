@@ -1,10 +1,9 @@
 import asyncio
-from functools import partial
 import os
 import sys
 from hachiko.hachiko import AIOEventHandler
 from werkzeug._internal import _log
-from werkzeug._reloader import ReloaderLoop, _find_observable_paths, run_with_reloader as werkzeug_run_with_reloader
+from werkzeug._reloader import ReloaderLoop, _find_observable_paths
 
 __author__ = 'alfred'
 
@@ -150,17 +149,6 @@ reloader_loops['auto'] = reloader_loops['hachiko']
 
 def run_with_reloader(main_func, extra_files=None, interval=1,
                       reloader_type='auto', loop=None):
-    """Run the given function in an independent python interpreter."""
-
-    if reloader_type in reloader_loops:
-        return run_with_reloader_asyncio(main_func, extra_files, interval, reloader_type, loop=loop)
-    else:
-        return werkzeug_run_with_reloader(main_func, extra_files, interval, reloader_type)
-
-
-def run_with_reloader_asyncio(main_func, extra_files=None, interval=1,
-                              reloader_type='auto', loop=None):
-    """Run the given function in an independent python interpreter."""
 
     loop = loop or asyncio.get_event_loop()
 

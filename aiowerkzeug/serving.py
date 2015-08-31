@@ -21,13 +21,6 @@ def make_server(host, port, app=None, threaded=False, processes=1,
                   loop=loop)
 
 
-def run_with_reloader(*args, **kwargs):
-    # People keep using undocumented APIs.  Do not use this function
-    # please, we do not guarantee that it continues working.
-    from ._reloader import run_with_reloader
-    return run_with_reloader(*args, **kwargs)
-
-
 def run_simple(hostname, port, application, use_reloader=False,
                use_debugger=False, use_evalex=True,
                extra_files=None, reloader_interval=1,
