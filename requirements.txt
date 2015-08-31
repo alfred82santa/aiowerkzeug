@@ -1,1 +1,3 @@
 Werkzeug>=0.7
+hachiko
+aiohttp
