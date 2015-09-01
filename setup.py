@@ -2,13 +2,13 @@ from setuptools import setup
 import os
 
 with open(os.path.join(os.path.dirname(__file__), 'README.rst')) as desc_file:
-    description = desc_file.read().replace(':class:', '')
+    description = desc_file.read().replace(':class:', '').replace(':func:', '')
 
 setup(
     name='aiowerkzeug',
     url='https://github.com/alfred82santa/aiowerkzeug',
     author='alfred82santa',
-    version='0.1.1',
+    version='0.1.2',
     author_email='alfred82santa@gmail.com',
     classifiers=[
         'Intended Audience :: Developers',
