@@ -5,38 +5,38 @@
 .. |travis-master| image:: https://travis-ci.org/alfred82santa/aiowerkzeug.svg?branch=master
     :target: https://travis-ci.org/alfred82santa/aiowerkzeug
 
-.. |coverall-master| image:: https://coveralls.io/repos/alfred82santa/aiowerkzeug/badge.png?branch=master
+.. |coverall-master| image:: https://coveralls.io/repos/alfred82santa/aiowerkzeug/badge.svg?branch=master&service=github
     :target: https://coveralls.io/r/alfred82santa/aiowerkzeug?branch=master
 
 .. |doc-master| image:: https://readthedocs.org/projects/aiowerkzeug/badge/?version=latest
     :target: https://readthedocs.org/projects/aiowerkzeug/?badge=latest
     :alt: Documentation Status
 
-.. |pypi-downloads| image:: https://pypip.in/download/aiowerkzeug/badge.svg
+.. |pypi-downloads| image:: https://img.shields.io/pypi/dm/aiowerkzeug.svg
     :target: https://pypi.python.org/pypi/aiowerkzeug/
     :alt: Downloads
 
-.. |pypi-lastrelease| image:: https://pypip.in/version/aiowerkzeug/badge.svg
+.. |pypi-lastrelease| image:: https://img.shields.io/pypi/v/aiowerkzeug.svg
     :target: https://pypi.python.org/pypi/aiowerkzeug/
     :alt: Latest Version
 
-.. |python-versions| image:: https://pypip.in/py_versions/aiowerkzeug/badge.svg
+.. |python-versions| image:: https://img.shields.io/pypi/pyversions/aiowerkzeug.svg
     :target: https://pypi.python.org/pypi/aiowerkzeug/
     :alt: Supported Python versions
 
-.. |project-status| image:: https://pypip.in/status/aiowerkzeug/badge.svg
+.. |project-status| image:: https://img.shields.io/pypi/status/aiowerkzeug.svg
     :target: https://pypi.python.org/pypi/aiowerkzeug/
     :alt: Development Status
 
-.. |project-license| image:: https://pypip.in/license/aiowerkzeug/badge.svg
+.. |project-license| image:: https://img.shields.io/pypi/l/aiowerkzeug.svg
     :target: https://pypi.python.org/pypi/aiowerkzeug/
     :alt: License
 
-.. |project-format| image:: https://pypip.in/format/aiowerkzeug/badge.svg
+.. |project-format| image:: https://img.shields.io/pypi/format/aiowerkzeug.svg
     :target: https://pypi.python.org/pypi/aiowerkzeug/
     :alt: Download format
 
-.. |project-implementation| image:: https://pypip.in/implementation/aiowerkzeug/badge.svg
+.. |project-implementation| image:: https://img.shields.io/pypi/implementation/aiowerkzeug.svg
     :target: https://pypi.python.org/pypi/aiowerkzeug/
     :alt: Supported Python implementations
 
