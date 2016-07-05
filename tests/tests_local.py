@@ -227,8 +227,6 @@ class LocalContextCoroutineTest(TestCase):
             self.assertEqual(ex.value, 45)
 
 
-
-
 class LocalKeepContextFactoryTest(TestCase):
 
     use_default_loop = True

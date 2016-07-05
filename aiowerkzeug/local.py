@@ -166,5 +166,3 @@ class AsyncLocalManager(LocalManager):
 
     def make_task_with_ctx_factory(self, ctx, loop=None):
         return partial(async_task_with_context, ctx=ctx, callback=self.cleanup, loop=loop)
-
-
