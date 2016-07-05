@@ -1,7 +1,11 @@
+from .local import context_coroutine, identify_future, patch_local, AsyncLocalManager, \
+    AsyncLocal, AsyncLocalStack, keep_context_factory
+
 __author__ = 'alfred'
-
-from .local import context_coroutine, identify_future, patch_local
-
 __all__ = ['context_coroutine',
            'identify_future',
-           'patch_local']
+           'patch_local',
+           'AsyncLocalManager',
+           'AsyncLocal',
+           'AsyncLocalStack',
+           'keep_context_factory']

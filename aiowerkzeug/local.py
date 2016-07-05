@@ -4,12 +4,10 @@ local.py
 Helpers to allow use asyncio on werkzeug library.
 """
 import inspect
-from functools import wraps
-from asyncio import futures
+from functools import wraps, partial
+from asyncio import futures, Task, ensure_future
 from asyncio.coroutines import CoroWrapper
-from asyncio.tasks import Task
-
-__author__ = 'alfred'
+from werkzeug.local import Local, LocalStack, LocalManager
 
 
 def identify_future(fut=None):
@@ -99,3 +97,72 @@ def context_coroutine(func, ctx):
     wrapper._is_coroutine = True  # For iscoroutinefunction().
 
     return wrapper
+
+
+def keep_context_factory(func, ctx):
+    """Decorator factory to run coroutines or async functions inside context.
+
+    Simplified version of :meth:`~context_coroutine` factory. It must work in same
+    way. But its code is more simple.
+
+    **Example:**
+
+    .. code-block:: python
+
+        def _get_app_context():
+            return current_app.app_context()
+
+        keep_app_context = partial(keep_context_factory, ctx=_get_app_context)
+    """
+
+    @wraps(func)
+    def inner(*args, **kwargs):
+        ctx_obj = ctx()
+
+        async def wrapper():
+            with ctx_obj:
+                return await func(*args, **kwargs)
+
+        return wrapper()
+
+    return inner
+
+
+def async_task_with_context(fut, ctx, callback=None, loop=None):
+
+    decorator = partial(keep_context_factory, ctx=ctx)
+
+    @decorator
+    async def inner():
+        try:
+            return await fut
+        finally:
+            if callback:
+                callback()
+
+    return ensure_future(inner(), loop=loop)
+
+
+class AsyncLocal(Local):
+
+    def __init__(self):
+        super(AsyncLocal, self).__init__()
+        object.__setattr__(self, '__ident_func__', identify_future)
+
+    def __release_local__(self, fut=None):
+        self.__storage__.pop(self.__ident_func__(fut=fut), None)
+
+
+class AsyncLocalStack(LocalStack):
+
+    def __init__(self):
+        self._local = AsyncLocal()
+
+    def __release_local__(self, fut=None):
+        self._local.__release_local__(fut=fut)
+
+
+class AsyncLocalManager(LocalManager):
+
+    def make_task_with_ctx_factory(self, ctx, loop=None):
+        return partial(async_task_with_context, ctx=ctx, callback=self.cleanup, loop=loop)

@@ -2,28 +2,28 @@
 |travis-master| |coverall-master| |doc-master| |pypi-downloads| |pypi-lastrelease| |python-versions|
 |project-status| |project-license| |project-format| |project-implementation|
 
-.. |travis-master| image:: https://travis-ci.org/alfred82santa/aiowerkzeug.svg?branch=master   
+.. |travis-master| image:: https://travis-ci.org/alfred82santa/aiowerkzeug.svg?branch=master
     :target: https://travis-ci.org/alfred82santa/aiowerkzeug
-    
+
 .. |coverall-master| image:: https://coveralls.io/repos/alfred82santa/aiowerkzeug/badge.svg?branch=master&service=github
     :target: https://coveralls.io/r/alfred82santa/aiowerkzeug?branch=master
-    
+
 .. |doc-master| image:: https://readthedocs.org/projects/aiowerkzeug/badge/?version=latest
     :target: https://readthedocs.org/projects/aiowerkzeug/?badge=latest
     :alt: Documentation Status
-    
+
 .. |pypi-downloads| image:: https://img.shields.io/pypi/dm/aiowerkzeug.svg
     :target: https://pypi.python.org/pypi/aiowerkzeug/
     :alt: Downloads
-    
+
 .. |pypi-lastrelease| image:: https://img.shields.io/pypi/v/aiowerkzeug.svg
     :target: https://pypi.python.org/pypi/aiowerkzeug/
     :alt: Latest Version
-    
+
 .. |python-versions| image:: https://img.shields.io/pypi/pyversions/aiowerkzeug.svg
     :target: https://pypi.python.org/pypi/aiowerkzeug/
     :alt: Supported Python versions
-    
+
 .. |project-status| image:: https://img.shields.io/pypi/status/aiowerkzeug.svg
     :target: https://pypi.python.org/pypi/aiowerkzeug/
     :alt: Development Status
@@ -46,9 +46,25 @@ aiowerkzeug
 
 Library to make werkzeug working with asyncio.
 
+---------
+Changelog
+---------
+
+Version 0.2.0
+=============
+
+* Use Python 3.5 async syntax.
+
+* New :func:`~keep_context_factory`. It works like :func:`~context_coroutine`,
+  but simple code.
+
+* Async version of Local, LocalStack and LocalManager. They implement `__release_local__` method.
+
 --------
 Features
 --------
+
+* Async versions of Local, LocalStack and LocalManager.
 
 * Locals work on asyncio Tasks. :class:`werkzeug.local.Local` or :class:`werkzeug.local.LocalStack` must be patched
   with :func:`aiowerkzeug.local.patch_local`
